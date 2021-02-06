@@ -1,14 +1,41 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0"/>
+    <title>HTML</title>
+    <link rel="stylesheet" type="text/css" href="./style/checkbox.css">
+    <link rel="stylesheet" type="text/css" href="./style/index.css">
+    
 </head>
+
 <body>
-    <h1>World</h1>
+    <section>
+        <div class="create_container">
+            <input class="create_input" type="text" placeholder="напишите задачу">
+            <button class="create_button">Добавить</button>
+        </div>
+        <div class="todo_container">
+            <div class="todo_item">
+                
+                <div class="todo_item_header">
+                    <label class="checbox_container">
+                        <input type="checkbox"/>
+                        <span class="checkmark"></span>
+                    </label>
+                    <H4>Купить молоко</H4>
+            </div>
+            <div class="todo_item_footer">
+                <p>11.01.2021  18:39</p>
+                <div class="action_buttons">
+                    <img src="./icons/bstar.jfif">
+                    <img src="./icons/trash.png">
+                </div>
+            </div>
+  
+        </div>
+    </section>
 </body>
+
 </html>
