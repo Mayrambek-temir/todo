@@ -30,7 +30,9 @@
         <div class="todo_container">
             {% for Todo in Todo_list %}
             <div class="todo_item">
-                
+                {% if Todo.is_favorite %}
+                    marked
+                {% endif %}
                 <div class="todo_item_header">
                     <label class="checbox_container">
                         <input type="checkbox"/>
@@ -43,8 +45,8 @@
                     <div class="action_buttons">
                        <!-- <img src="./icons/bstar.jfif">
                         <img src="./icons/trash.png">-->
-                        <img src="{%static 'icons/bstar.jfif'%}">
-                        <img src="{% static 'icons/trash.png'%}">
+                        <a href="{% url 'mark-todo' Todo.id %}"><img src="{%static 'icons/bstar.jfif'%}"></a>
+                        <a href="{% url 'delete-todo' Todo.id %}"><img src="{% static 'icons/trash.png'%}"></a>
                     </div>
                 </div>
                 {% endfor %}

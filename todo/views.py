@@ -14,3 +14,14 @@ def add_todo(request):
     todo=Todo(text=text)
     todo.save()
     return redirect(test)
+
+def delete_todo(request, id):
+    todo=Todo.objects.get(id=id)
+    todo.delete()
+    return redirect(test)
+
+
+def mark_todo(request, id):
+    todo=Todo.objects.get(id=id)
+    todo.is_favorite(True)
+    return redirect(test)
