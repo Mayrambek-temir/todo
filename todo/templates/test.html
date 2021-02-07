@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE HTML>
 <html>
 
@@ -5,13 +7,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="with=device-width, initial-scale=1.0"/>
     <title>HTML</title>
+    <!--<link rel="stylesheet" type="text/css" href="./style/checkbox.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="./style/index.css">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'style/index.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/checkbox.css'%}"/>
     
 </head>
 
 <body>
-    {% for Todo in Todo_list %}
+   <!-- {% for Todo in Todo_list %}
         <h3>{{Todo.text}}-{{Todo.created_at}}</h3>
-    {% endfor %}
+    {% endfor %}-->
+    <section>
+        <div class="create_container">
+            <input class="create_input" type="text" placeholder="напишите задачу">
+            <button class="create_button">Добавить</button>
+        </div>
+        <div class="todo_container">
+            {% for Todo in Todo_list %}
+            <div class="todo_item">
+                
+                <div class="todo_item_header">
+                    <label class="checbox_container">
+                        <input type="checkbox"/>
+                        <span class="checkmark"></span>
+                    </label>
+                    <H4>{{Todo.text}}</H4>
+                </div>
+                <div class="todo_item_footer">
+                <p>{{Todo.created_at}}</p>
+                    <div class="action_buttons">
+                       <!-- <img src="./icons/bstar.jfif">
+                        <img src="./icons/trash.png">-->
+                        <img src="{%static 'icons/bstar.jfif'%}">
+                        <img src="{% static 'icons/trash.png'%}">
+                    </div>
+                </div>
+                {% endfor %}
+  
+        </div>
+    </section>
 </body>
 
 </html>
