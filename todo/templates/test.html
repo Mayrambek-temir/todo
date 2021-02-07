@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0"/>
+    <title>HTML</title>
+    
+</head>
+
+<body>
+    {% for Todo in Todo_list %}
+        <h3>{{Todo.text}}-{{Todo.created_at}}</h3>
+    {% endfor %}
+</body>
+
+</html>
